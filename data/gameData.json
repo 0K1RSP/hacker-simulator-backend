@@ -1,0 +1,29 @@
+{
+  "stats": {
+    "totalPlayers": 3,
+    "totalLinesCoded": 745,
+    "totalPets": 0,
+    "totalAscensions": 0,
+    "createdAt": 1777156525544
+  },
+  "events": {
+    "active": [],
+    "scheduled": []
+  },
+  "announcements": [
+    {
+      "title": "bonsoir",
+      "message": "ggbg",
+      "type": "info",
+      "author": "ansaru",
+      "id": "1777157852470",
+      "createdAt": 1777157852470
+    }
+  ],
+  "polls": [],
+  "leaderboard": {
+    "byLines": [],
+    "byAscensions": [],
+    "byPets": []
+  }
+}

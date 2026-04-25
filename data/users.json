@@ -1,0 +1,142 @@
+{
+  "18dfafe1-c155-4cdf-9661-2031c2d70de1": {
+    "id": "18dfafe1-c155-4cdf-9661-2031c2d70de1",
+    "createdAt": 1777156636699,
+    "lastSave": 1777157780805,
+    "lastOnline": 1777157287289,
+    "lines": 1215,
+    "totalLines": 1253,
+    "gems": 0,
+    "cryptoTokens": 0,
+    "prestigeCount": 0,
+    "ascensionCount": 0,
+    "ascensionPoints": 0,
+    "totalClicks": 253,
+    "totalHackersBought": 2,
+    "totalEggsHatched": 0,
+    "hackers": {
+      "hacker_debutant": {
+        "count": 2,
+        "level": 1
+      }
+    },
+    "upgrades": {},
+    "pets": [],
+    "equippedPets": [],
+    "currentSkin": "hacker_basic",
+    "currentTheme": "green",
+    "unlockedSkins": [
+      "hacker_basic"
+    ],
+    "unlockedThemes": [
+      "green"
+    ],
+    "dailyQuests": [],
+    "weeklyQuests": [],
+    "lastDailyReset": 1777156636699,
+    "lastWeeklyReset": 1777156636699,
+    "completedQuests": [],
+    "boosts": [],
+    "settings": {
+      "soundEnabled": true,
+      "notificationsEnabled": true
+    },
+    "totalPlayTime": 0,
+    "lastActivity": 1777156636699,
+    "username": "ansaru",
+    "email": null
+  },
+  "127b6bce-f61b-4aeb-a71d-58d30192ccfe": {
+    "id": "127b6bce-f61b-4aeb-a71d-58d30192ccfe",
+    "createdAt": 1777157184101,
+    "lastSave": 1777157787797,
+    "lastOnline": 1777157787797,
+    "lines": 1094,
+    "totalLines": 1214,
+    "gems": 0,
+    "cryptoTokens": 0,
+    "prestigeCount": 0,
+    "ascensionCount": 0,
+    "ascensionPoints": 0,
+    "totalClicks": 214,
+    "totalHackersBought": 1,
+    "totalEggsHatched": 0,
+    "hackers": {
+      "hacker_cybercafe": {
+        "count": 1,
+        "level": 1
+      }
+    },
+    "upgrades": {},
+    "pets": [],
+    "equippedPets": [],
+    "currentSkin": "hacker_basic",
+    "currentTheme": "green",
+    "unlockedSkins": [
+      "hacker_basic"
+    ],
+    "unlockedThemes": [
+      "green"
+    ],
+    "dailyQuests": [],
+    "weeklyQuests": [],
+    "lastDailyReset": 1777157184101,
+    "lastWeeklyReset": 1777157184101,
+    "completedQuests": [],
+    "boosts": [],
+    "settings": {
+      "soundEnabled": true,
+      "notificationsEnabled": true
+    },
+    "totalPlayTime": 0,
+    "lastActivity": 1777157184101,
+    "username": "Guest_127b6b"
+  },
+  "69e02817-21be-4271-a282-b781a7c4b20d": {
+    "id": "69e02817-21be-4271-a282-b781a7c4b20d",
+    "createdAt": 1777157802967,
+    "lastSave": 1777159840287,
+    "lastOnline": 1777159840287,
+    "lines": 1020,
+    "totalLines": 1278,
+    "gems": 0,
+    "cryptoTokens": 0,
+    "prestigeCount": 0,
+    "ascensionCount": 0,
+    "ascensionPoints": 0,
+    "totalClicks": 111,
+    "totalHackersBought": 2,
+    "totalEggsHatched": 0,
+    "hackers": {
+      "hacker_cybercafe": {
+        "count": 2,
+        "level": 1
+      }
+    },
+    "upgrades": {},
+    "pets": [],
+    "equippedPets": [],
+    "currentSkin": "hacker_basic",
+    "currentTheme": "green",
+    "unlockedSkins": [
+      "hacker_basic"
+    ],
+    "unlockedThemes": [
+      "green"
+    ],
+    "dailyQuests": [],
+    "weeklyQuests": [],
+    "lastDailyReset": 1777157802967,
+    "lastWeeklyReset": 1777157802967,
+    "completedQuests": [],
+    "boosts": [],
+    "settings": {
+      "soundEnabled": true,
+      "notificationsEnabled": true
+    },
+    "totalPlayTime": 0,
+    "lastActivity": 1777157802967,
+    "username": "JeanPascal",
+    "email": null
+  }
+}
