@@ -1,0 +1,29 @@
+{
+  "name": "hacker-clicker-simulator",
+  "version": "1.0.0",
+  "description": "🎮 Hacker Clicker Simulator - Un jeu incremental/idle clicker avec thème cyberpunk",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "keywords": [
+    "game",
+    "clicker",
+    "idle",
+    "cyberpunk",
+    "hacker"
+  ],
+  "author": "Ansaru",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.4.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "socket.io": "^4.8.3",
+    "uuid": "^9.0.1"
+  }
+}
