@@ -44,13 +44,19 @@ app.use(helmet({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Make io accessible to routes
-app.set('io', io);
-
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/game', gameRoutes);
 app.use('/api/admin', adminRoutes);
+
+// Error handling middleware (must be after routes but before wildcard)
+app.use((err, req, res, next) => {
+  console.error('[Error]', err);
+  res.status(err.status || 500).json({
+    error: err.message || 'Internal Server Error',
+    ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
+  });
+});
 
 // Serve admin panel
 app.get('/admin', (req, res) => {
@@ -62,11 +68,8 @@ app.get('/admin/', (req, res) => {
 });
 
 // Serve game frontend - Only match non-API routes
-app.get('*', (req, res) => {
-  // Don't intercept API routes
-  if (req.path.startsWith('/api') || req.path.startsWith('/admin')) {
-    return res.status(404).json({ error: 'Route not found' });
-  }
+// Use regex pattern for Express 5 compatibility
+app.get(/^(?!\/api|\/admin).*/, (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
@@ -143,13 +146,13 @@ async function startServer() {
     // Load existing data or initialize
     loadData();
 
-    server.listen(PORT, () => {
+    server.listen(PORT, '0.0.0.0', () => {
       console.log(`
 ╔═══════════════════════════════════════════════════════════╗
 ║                                                           ║
 ║   🎮  HACKER CLICKER SIMULATOR - Server Started          ║
 ║                                                           ║
-║   🌐  URL: http://localhost:${PORT}                        ║
+║   🌐  URL: http://0.0.0.0:${PORT}                        ║
 ║   📡  WebSocket: Active                                   ║
 ║   💾  Data: ${DATA_FILE}                            ║
 ║                                                           ║
