@@ -61,8 +61,12 @@ app.get('/admin/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/admin/index.html'));
 });
 
-// Serve game frontend - Express 5 syntax for catch-all routes
-app.get('/*path', (req, res) => {
+// Serve game frontend - Only match non-API routes
+app.get('*', (req, res) => {
+  // Don't intercept API routes
+  if (req.path.startsWith('/api') || req.path.startsWith('/admin')) {
+    return res.status(404).json({ error: 'Route not found' });
+  }
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 

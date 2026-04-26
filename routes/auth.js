@@ -12,7 +12,7 @@ const {
   verifyAdminCredentials,
   authRateLimit
 } = require('../middleware/auth');
-const { getUser, createUser, updateUser } = require('../utils/dataManager');
+const { getUser, createUser, updateUser, getAllUsers } = require('../utils/dataManager');
 
 // Rate limiting for auth endpoints
 const authLimiter = rateLimit(authRateLimit);
@@ -66,17 +66,15 @@ router.post('/register', authLimiter, async (req, res) => {
  */
 router.post('/login', authLimiter, (req, res) => {
   try {
-    const { userId, username } = req.body;
+    const { username } = req.body;
     
-    if (!userId && !username) {
-      return res.status(400).json({ error: 'ID ou nom d\'utilisateur requis' });
+    if (!username) {
+      return res.status(400).json({ error: 'Nom d\'utilisateur requis' });
     }
     
-    // Find user
-    let user = null;
-    if (userId) {
-      user = getUser(userId);
-    }
+    // Find user by username
+    const allUsers = getAllUsers();
+    const user = Object.values(allUsers).find(u => u.username === username);
     
     if (!user) {
       return res.status(404).json({ error: 'Utilisateur non trouvé' });
