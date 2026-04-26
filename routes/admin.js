@@ -365,7 +365,7 @@ router.post('/players/:userId/give-pet', authenticateAdmin, (req, res) => {
     // Broadcast to the player if connected
     const io = req.app.get('io');
     if (io) {
-      io.to(userId).emit('petReceived', {
+      io.to(`user_${userId}`).emit('petReceived', {
         pet: newPet,
         from: 'admin'
       });

@@ -17,6 +17,7 @@ const {
   getRandomPet,
   calculateOfflineEarnings,
   checkQuestCompletion,
+  calculatePetMultiplier,
   formatNumber
 } = require('../utils/gameLogic');
 const gameConfig = require('../config/gameConfig');
@@ -301,6 +302,8 @@ router.post('/buy-upgrade', authenticateToken, loadUser, (req, res) => {
         id: upgradeId,
         level: user.upgrades[upgradeId]
       },
+      lines: user.lines,
+      gems: user.gems,
       cost,
       clickValue,
       autoProduction
@@ -428,13 +431,19 @@ router.post('/equip-pet', authenticateToken, loadUser, (req, res) => {
     user.lastOnline = Date.now();
     updateUser(user.id, user);
     
-    // Calculate new pet multiplier
+    // Calculate new pet multiplier and production
     const petMultiplier = calculatePetMultiplier(user);
+    const clickValue = calculateFinalClickValue(user);
+    const autoProduction = calculateFinalAutoProduction(user);
     
     res.json({
       success: true,
       equipped: user.equippedPets,
-      petMultiplier
+      lines: user.lines,
+      gems: user.gems,
+      petMultiplier,
+      clickValue,
+      autoProduction
     });
   } catch (err) {
     console.error('[Game] Equip pet error:', err);
